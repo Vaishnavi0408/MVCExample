@@ -1,0 +1,41 @@
+﻿@using  MVCExmpl.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+            List<Department> dlist = TempData["deplist"] as List<Department>;
+        }
+        <center><h2>Department Info</h2></center>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Department_Id</th>
+                    <th>Department_Name</th>
+                    <th>Location</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+
+            @foreach (Department d in dlist)
+            {
+                <tr>
+                    <td>@d.deptid</td>
+                    <td>@d.dname</td>
+                    <td>@d.loc</td>
+                    <td>@d.country</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
